@@ -49,3 +49,10 @@ RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
 
 # Expose port 80
 EXPOSE 80
+
+# Copy the start script and make it executable
+COPY start.sh /usr/local/bin/start.sh
+RUN chmod +x /usr/local/bin/start.sh
+
+# Run the start script when the container launches
+CMD ["/usr/local/bin/start.sh"]
