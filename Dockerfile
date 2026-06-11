@@ -52,6 +52,7 @@ EXPOSE 80
 
 # Copy the start script and make it executable
 COPY start.sh /usr/local/bin/start.sh
+RUN sed -i 's/\r$//' /usr/local/bin/start.sh
 RUN chmod +x /usr/local/bin/start.sh
 
 # Run the start script when the container launches
