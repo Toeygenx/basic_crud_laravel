@@ -9,7 +9,7 @@ $kernel->bootstrap();
 
 try {
     echo "<h1>Running Migrations...</h1>";
-    \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
+    \Illuminate\Support\Facades\Artisan::call('migrate:fresh', ['--force' => true]);
     echo "<pre>" . \Illuminate\Support\Facades\Artisan::output() . "</pre>";
     echo "<br><strong style='color:green'>✅ Migration complete! You can now use the website.</strong>";
     echo "<br><br><strong style='color:red'>⚠️ IMPORTANT: Please delete this file (public/migrate.php) immediately!</strong>";
