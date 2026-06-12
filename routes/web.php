@@ -18,5 +18,5 @@ Route::get('/run-migrations', function () {
     } catch (\Exception $e) {
         return '<pre style="color:red">❌ Error: ' . $e->getMessage() . '</pre>';
     }
-});
+})->withoutMiddleware(\Illuminate\Session\Middleware\StartSession::class);
 
